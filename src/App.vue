@@ -2,13 +2,14 @@
   <section class="hero is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <div class="clock">{{ now | moment("hh:mm:ss") }}</div>
+        <div class="clock">{{ now | moment("HH:mm:ss") }}</div>
         <div class="date">{{ now | moment("dddd, MMMM Do YYYY") }}</div>
         <div class="inline-icons">
           <a href="https://facebook.com"><icon name="facebook-square" scale="5"></icon></a>
           <a href="https://youtube.com"><icon name="youtube-play" scale="5"></icon></a>
           <a href="https://reddit.com"><icon name="reddit-alien" scale="5"></icon></a>
           <a href="https://github.com"><icon name="github-alt" scale="5"></icon></a>
+          <a href="https://git.boerlage.me"><icon name="gitlab" scale="5"></icon></a>
           <a href="https://news.ycombinator.com"><icon name="hacker-news" scale="5"></icon></a>
         </div>
       </div>
