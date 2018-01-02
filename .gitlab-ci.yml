@@ -1,0 +1,23 @@
+stages:
+  - build
+
+before_script:
+  - set -e
+  - set -u
+  - set -o pipefail
+
+build:
+  stage: build
+  image: node:carbon
+  cache:
+    paths:
+    - node_modules/
+  artifacts:
+    name: $CI_PIPELINE_ID
+    paths:
+    - dist/
+    expire_in: 1 week
+  script:
+    - yarn
+    - yarn build
+    - cp manifest.json dist/manifest.json
