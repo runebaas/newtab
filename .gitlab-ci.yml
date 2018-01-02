@@ -15,9 +15,10 @@ build:
   artifacts:
     name: $CI_PIPELINE_ID
     paths:
-    - dist/
+    - dist/*
     expire_in: 1 week
   script:
     - yarn
     - yarn build
     - cp manifest.json dist/manifest.json
+    - cp icon-128.png dist/icon-128.png
