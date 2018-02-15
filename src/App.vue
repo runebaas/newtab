@@ -5,12 +5,12 @@
         <div class="clock">{{ now | moment("HH:mm:ss") }}</div>
         <div class="date">{{ now | moment("dddd, MMMM Do YYYY") }}</div>
         <div class="inline-icons">
-          <a href="https://facebook.com"><icon name="facebook-square" scale="5"></icon></a>
-          <a href="https://youtube.com"><icon name="youtube-play" scale="5"></icon></a>
-          <a href="https://reddit.com"><icon name="reddit-alien" scale="5"></icon></a>
-          <a href="https://github.com"><icon name="github-alt" scale="5"></icon></a>
-          <a href="https://git.boerlage.me"><icon name="gitlab" scale="5"></icon></a>
-          <a href="https://news.ycombinator.com"><icon name="hacker-news" scale="5"></icon></a>
+          <a href="https://facebook.com"><icon :icon="icons.facebook" size="5x"></icon></a>
+          <a href="https://youtube.com"><icon :icon="icons.youtube" size="5x"></icon></a>
+          <a href="https://reddit.com"><icon :icon="icons.reddit" size="5x"></icon></a>
+          <a href="https://github.com"><icon :icon="icons.github" size="5x"></icon></a>
+          <a href="https://git.boerlage.me"><icon :icon="icons.gitlab" size="5x"></icon></a>
+          <a href="https://news.ycombinator.com"><icon :icon="icons.hackernews" size="5x"></icon></a>
         </div>
       </div>
     </div>
@@ -19,6 +19,15 @@
 </template>
 
 <script>
+  import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
+  import {
+    faFacebookSquare,
+    faYoutube,
+    faRedditAlien,
+    faGithubAlt,
+    faGitlab,
+    faHackerNews,
+  } from '@fortawesome/fontawesome-free-brands';
 
   export default {
     name: 'app',
@@ -27,9 +36,20 @@
         this.now = Date.now();
       }, 1000);
     },
+    components: {
+      icon: FontAwesomeIcon,
+    },
     data() {
       return {
         now: Date.now(),
+        icons: {
+          facebook: faFacebookSquare,
+          youtube: faYoutube,
+          reddit: faRedditAlien,
+          github: faGithubAlt,
+          gitlab: faGitlab,
+          hackernews: faHackerNews,
+        },
       };
     },
   };
