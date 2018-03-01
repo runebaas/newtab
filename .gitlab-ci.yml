@@ -1,5 +1,6 @@
 stages:
   - build
+  - mirror
 
 before_script:
   - set -e
@@ -22,3 +23,11 @@ build:
     - yarn build
     - cp manifest.json dist/manifest.json
     - cp icon-128.png dist/icon-128.png
+
+mirror:
+  stage: mirror
+  image: bravissimolabs/alpine-git:latest
+  only:
+    - master
+  script:
+    - git push https://runebaas:$TOKEN@github.com/runebaas/newtab.git origin/master:master -f
