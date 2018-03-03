@@ -6,6 +6,7 @@
         <div class="date">{{ now | moment("dddd, MMMM Do YYYY") }}</div>
         <div class="inline-icons">
           <a href="https://facebook.com"><icon :icon="icons.facebook" size="5x"></icon></a>
+          <a href="https://twitter.com"><icon :icon="icons.twitter" size="5x"></icon></a>
           <a href="https://youtube.com"><icon :icon="icons.youtube" size="5x"></icon></a>
           <a href="https://reddit.com"><icon :icon="icons.reddit" size="5x"></icon></a>
           <a href="https://github.com"><icon :icon="icons.github" size="5x"></icon></a>
@@ -27,6 +28,7 @@
     faGithubAlt,
     faGitlab,
     faHackerNews,
+    faTwitter,
   } from '@fortawesome/fontawesome-free-brands';
 
   export default {
@@ -44,6 +46,7 @@
         now: Date.now(),
         icons: {
           facebook: faFacebookSquare,
+          twitter: faTwitter,
           youtube: faYoutube,
           reddit: faRedditAlien,
           github: faGithubAlt,
