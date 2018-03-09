@@ -1,6 +1,6 @@
 {
   "description": "A simple new tab page",
-  "version": "1.4",
+  "version": "1.5",
   "name": "new tab",
   "chrome_url_overrides": {
     "newtab": "index.html"
